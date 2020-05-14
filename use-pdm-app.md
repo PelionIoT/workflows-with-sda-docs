@@ -3,8 +3,7 @@
 After you have installed Pelion Device Management Application, you can begin using its features. 
 
 ## Login Screen:
-Sign In to mobile app using your Pelion Device Management Native credentials. 
-
+Sign In to mobile app using your Pelion Device Management native credentials. 
 
 ## Select Account :
 1. Choose the account/team from the list of accounts.
@@ -13,7 +12,7 @@ Sign In to mobile app using your Pelion Device Management Native credentials.
 
 ## Jobs List Screen :
 
-1. Jobs screen will fetch workflow jobs data from server and In Pending tab you can see Job listed which are assigned to you.
+1. Jobs screen will fetch workflow jobs data from cloud and In Pending tab you can see Job listed which are assigned to you.
 
 1. Each job requires to be performed on the device(s) will require secure access policy and also if job assigned to you is configure type then a file is also downloaded, so make sure you are connected to internet.
 
