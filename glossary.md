@@ -10,6 +10,8 @@
 
 **Cloud** - Servers containing data, which you can access over the Interent.
 
+**Configure** - It's a permission type in SDA which allow user to transfer file to device from mobile app, It is setup on portal Access Management -> Access Policies.  
+
 ## D
 
 **Device** - The "thing" part of the Internet of Things - a physical smart item you want to control or monitor using Pelion Device Management.
@@ -27,6 +29,10 @@
 **Pelion Device Management** - Product with which you can deploy and manage IoT devices in the Arm Pelion platform.
 
 **Portal** - Website that shows your Pelion Device Management account statistics and the devices connected to it.
+
+## R
+
+**Read-data** - It's a permission type in SDA which allow user to read file from device using mobile app, It is setup on portal Access Management -> Access Policies.
 
 ## S
 **SDA** - Secure Device Access policy which define permission for the user for various task.
