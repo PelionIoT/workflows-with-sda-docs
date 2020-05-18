@@ -3,7 +3,7 @@
 ## Login to Portal
 Login to portal using your Pelion Device Management credentials, Select your team in which you want to assign workflows and set secure access policies.
 <br><br>
-<img style='width: 320;height: 480px;' src="assets/portal_login.png"></img>
+<img src="assets/portal_login.png"></img>
 
 ## How to create access policies?
 
@@ -16,7 +16,7 @@ Login to portal using your Pelion Device Management credentials, Select your tea
 7. Select User / Group from dropdown to assign this access policy. 
 
 <br><br>
-<img style='width: 320;height: 480px;' src="assets/sda.png"></img>
+<img src="assets/sda.png"></img>
 
 ## How to create Jobs?
 
@@ -33,7 +33,7 @@ Login to portal using your Pelion Device Management credentials, Select your tea
 10. Click on "Create Job" button, If disabled then check if you have added task or not.
 
 <br><br>
-<img style='width: 320;height: 480px;' src="assets/jobs_creation_portal.png"></img>
+<img src="assets/jobs_creation_portal.png"></img>
 
 ## How to check Job status and Output ?
 1. Select Job Management -> Jobs from left panel.
@@ -43,5 +43,5 @@ Login to portal using your Pelion Device Management credentials, Select your tea
 5. Also, for Read task If it succedded then output filename.txt file read from device will be there which can be downloaded as well.
 
 <br><br>
-<img style='width: 500px;height: 500px;' src="assets/job_summary.png"></img>
+<img src="assets/job_summary.png" width="400" height="500"></img>
       

@@ -5,7 +5,7 @@ After you have installed Pelion Device Management Application, you can begin usi
 ## Login Screen:
 Sign In to mobile app using your Pelion Device Management native credentials.
 <br><br>
-<img style='width: 320;height: 480px;' src="assets/login.png"></img>
+<img src="assets/login.png" width="200" height="400" ></img>
 
 
 ## Select Account :
@@ -15,8 +15,8 @@ Sign In to mobile app using your Pelion Device Management native credentials.
 
 1. From navigation drawer, once account is selected you can switch account by clicking on switch account which will navigate back to accounts page, Also you can select settings and sign out as well.
 <br><br>
-<img style='width: 320;height: 480px;' src="assets/accounts.png"></img> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img style='width: 320;height: 480px;' src="assets/navigation_drawer.png"></img>
+<img src="assets/accounts.png" width="200" height="400"></img> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="assets/navigation_drawer.png" width="200" height="400"></img>
 
 ## Jobs List Screen :
 
@@ -34,9 +34,9 @@ Sign In to mobile app using your Pelion Device Management native credentials.
 
 1. In Completed tab, Jobs are listed and there is Upload button which user can use to upload the status/logs of Job to Cloud and that will be synced in portal as well.
 <br><br>
-<img style='width: 320;height: 480px;' src="assets/joblist_pending.png"></img> &nbsp;&nbsp;&nbsp;&nbsp;
-<img style='width: 320;height: 480px;' src="assets/job_upload.png"></img>&nbsp;&nbsp;&nbsp;&nbsp;
-<img style='width: 320;height: 480px;' src="assets/job_uploading.png"></img>
+<img src="assets/joblist_pending.png" width="200" height="400"></img> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="assets/job_upload.png" width="200" height="400"></img>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="assets/job_uploading.png" width="200" height="400"></img>
 
 
 ## Job page :
@@ -44,8 +44,8 @@ Sign In to mobile app using your Pelion Device Management native credentials.
 
 1. If SDA token is expired then status is expired and you can see refresh icon, on click of which it will try to renew the SDA policy again (this require internet connectivity).
 <br><br>
-<img style='width: 320;height: 480px;' src="assets/job_ready.png"></img>&nbsp;&nbsp;&nbsp;&nbsp;
-<img style='width: 320;height: 480px;' src="assets/job_completed_detail.png"></img>
+<img src="assets/job_ready.png" width="200" height="400"></img>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="assets/job_completed_detail.png" width="200" height="400"></img>
 
 
 ## Job execution :
@@ -60,11 +60,11 @@ Sign In to mobile app using your Pelion Device Management native credentials.
 1. When all the devices assigned to the job has job run completed, status wil change to stopped and finish button will take you to Jobs page.
 
 <br><br>
-<img style='width: 320;height: 480px;' src="assets/job_swipe_run_device.png"></img>&nbsp;&nbsp;&nbsp;&nbsp;
-<img style='width: 320;height: 480px;' src="assets/ble_turnon.png"></img> &nbsp;&nbsp;&nbsp;&nbsp;
-<img style='width: 320;height: 480px;' src="assets/location_service_required.png"></img>&nbsp;&nbsp;&nbsp;&nbsp;
-<img style='width: 320;height: 480px;' src="assets/job_running.png"></img>
-<img style='width: 320;height: 480px;' src="assets/job_finish.png"></img>
+<img src="assets/job_swipe_run_device.png" width="200" height="400"></img>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="assets/ble_turnon.png" width="200" height="400"></img> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="assets/location_service_required.png" width="200" height="400"></img>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="assets/job_running.png" width="200" height="400"></img>
+<img src="assets/job_finish.png" width="200" height="400"></img>
 
 
 ## Settings :
@@ -75,7 +75,7 @@ Sign In to mobile app using your Pelion Device Management native credentials.
 1. Help & Support - Customer help and support related to Pelion Device Management along with other informations like Third party libraries we use in app, and documentation.
 
 <br><br>
-<img style='width: 320;height: 480px;' src="assets/settings.png"></img> &nbsp;&nbsp;&nbsp;&nbsp;
-<img style='width: 320;height: 480px;' src="assets/dark_theme.png"></img> &nbsp;&nbsp;&nbsp;&nbsp;
-<img style='width: 320;height: 480px;' src="assets/scan_setup.png"></img>&nbsp;&nbsp;&nbsp;&nbsp;
-<img style='width: 320;height: 480px;' src="assets/help_support.png">
+<img src="assets/settings.png" width="200" height="400"></img> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="assets/dark_theme.png" width="200" height="400"></img> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="assets/scan_setup.png" width="200" height="400"></img>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="assets/help_support.png" width="200" height="400">
