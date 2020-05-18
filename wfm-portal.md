@@ -2,7 +2,8 @@
 
 ## Login to Portal
 Login to portal using your Pelion Device Management credentials, Select your team in which you want to assign workflows and set secure access policies.
-
+<br><br>
+<img style='width: 320;height: 480px;' src="assets/portal_login.png"></img>
 
 ## How to create access policies?
 
@@ -13,6 +14,9 @@ Login to portal using your Pelion Device Management credentials, Select your tea
 5. Token granted for : It's unit is in days so if you give for example 3 then it means this access policy will be valid for 3 days.
 6. Now, Select Endpoint name(s) / device Id(s) and enter the device endpoint name obtain during configuring device certificate.
 7. Select User / Group from dropdown to assign this access policy. 
+
+<br><br>
+<img style='width: 320;height: 480px;' src="assets/sda.png"></img>
 
 ## How to create Jobs?
 
@@ -28,6 +32,9 @@ Login to portal using your Pelion Device Management credentials, Select your tea
 9. Add Device IDs or Endpoint names on which this job has to performed. Multiple deviceIDs/Endpoint Names can be added separated by newlines.     
 10. Click on "Create Job" button, If disabled then check if you have added task or not.
 
+<br><br>
+<img style='width: 320;height: 480px;' src="assets/jobs_creation_portal.png"></img>
+
 ## How to check Job status and Output ?
 1. Select Job Management -> Jobs from left panel.
 2. Please search or scroll to job you want to check status for.
@@ -35,4 +42,6 @@ Login to portal using your Pelion Device Management credentials, Select your tea
 4. Click on Job and In right panel, check Summary. In Summary task status, Device Count, Devices Succeeded, error and other relevant information will be there to help you in tracking the job status.
 5. Also, for Read task If it succedded then output filename.txt file read from device will be there which can be downloaded as well.
 
-           
+<br><br>
+<img style='width: 500px;height: 500px;' src="assets/job_summary.png"></img>
+      
