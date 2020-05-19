@@ -44,4 +44,12 @@ Login to portal using your Pelion Device Management credentials, Select your tea
 
 <br><br>
 <img src="assets/job_summary.png" width="400" height="500"></img>
+<br><br>
+## How to change branding logo from portal ?
+1. Select Team Configuration -> Team Branding.
+2. Scroll down to Images -> Logo.
+3. Choose landscape image and upload the image file.
+4. Click on Save Button.
+<br><br>
+<img src="assets/portal_branding.png"></img>
       

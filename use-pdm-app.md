@@ -14,10 +14,13 @@ Sign In to mobile app using your Pelion Device Management native credentials.
 1. If you are associated with single team then Jobs screen will directly be opened. 
 
 1. From navigation drawer, once account is selected you can switch account by clicking on switch account which will navigate back to accounts page, Also you can select settings and sign out as well.
+
+1. Branding logo will be downloaded and visible on login screen, if it's available on the portal.
+
 <br><br>
 <img src="assets/accounts.png" width="200" height="400"></img> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="assets/navigation_drawer.png" width="200" height="400"></img>
-
+<img src="assets/navigation_drawer.png" width="200" height="400"></img>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="assets/branding_logo.png" width="200" height="400"></img>
 ## Jobs List Screen :
 
 1. Jobs screen will fetch workflow jobs data from cloud and In Pending tab you can see Job listed which are assigned to you.
