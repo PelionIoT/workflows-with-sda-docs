@@ -38,6 +38,7 @@ Sign In to mobile app using your Pelion Device Management native credentials.
 1. In Completed tab, Jobs are listed and there is Upload button which user can use to upload the status/logs of Job to Cloud and that will be synced in portal as well.
 <br><br>
 <img src="assets/joblist_pending.png" width="200" height="400"></img> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="assets/job_sda_expired.png" width="200" height="400"></img> &nbsp;&nbsp;&nbsp;&nbsp;
 <img src="assets/job_upload.png" width="200" height="400"></img>&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="assets/job_uploading.png" width="200" height="400"></img>
 
@@ -48,7 +49,9 @@ Sign In to mobile app using your Pelion Device Management native credentials.
 1. If SDA token is expired then status is expired and you can see refresh icon, on click of which it will try to renew the SDA policy again (this require internet connectivity).
 <br><br>
 <img src="assets/job_ready.png" width="200" height="400"></img>&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="assets/job_completed_detail.png" width="200" height="400"></img>
+<img src="assets/job_completed_detail.png" width="200" height="400"></img>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="assets/job_not_available.png" width="200" height="400"></img>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="assets/sda_token_expire_no_internet.png" width="200" height="400"></img>
 
 
 ## Job execution :

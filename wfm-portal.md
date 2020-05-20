@@ -27,7 +27,7 @@ Login to portal using your Pelion Device Management credentials, Select your tea
 5. Location: Add City name in which job has to be performed.
 6. Assign To: Select user from dropdown to which this job should be assigned.
 7. Planned Start: This can be set for setting Job start date and time.
-8. Tasks : Read - "fs/filename.txt" replace filename with file name you want to read from device. 
+8. Tasks : Read - "/fs/filename.txt" replace filename with file name you want to read from device. 
       <br> Write - Upload the file and give the path for example if filename is xyz.txt then destination will be "/fs/xyz.txt"
 9. Add Device IDs or Endpoint names on which this job has to performed. Multiple deviceIDs/Endpoint Names can be added separated by newlines.     
 10. Click on "Create Job" button, If disabled then check if you have added task or not.
