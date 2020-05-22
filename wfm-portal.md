@@ -10,10 +10,11 @@ Login to portal using your Pelion Device Management credentials, Select your tea
 1. If you are admin of this team then you will see option "Access Policies" in Access Management (Access Management -> Access Policies).
 2. On Top Right Click on "+ New access policy" button which will open a form for creating New SDA policy.
 3. You can edit default name and add description for SDA policy you are creating.
-4. Select Selected Function and add "run-workflow", "read-data" for giving read only and "configure" for write permission. 
-5. Token granted for : It's unit is in days so if you give for example 3 then it means this access policy will be valid for 3 days.
-6. Now, Select Endpoint name(s) / device Id(s) and enter '*'.
-7. Select User / Group from dropdown to assign this access policy. 
+4. You need to have 1 policy with scope as "run-workflow" in  Selected Function and Device ID as "*". 
+5. Now create another policy with either "read-data" for read permission and "configure" for write data in Selected Function. If you want to give both permissions<br> in scope, write "read-data" and after enter (next line) enter "configure".
+6. Token granted for : It's unit is in days so if you give for example 3 then it means this access policy will be valid for 3 days.
+7. Now, Select Endpoint name(s) and enter Endpoint name(s) of device.
+8. Select User / Group from dropdown to assign this access policy. 
 
 <br><br>
 <img src="assets/sda.png"></img>
