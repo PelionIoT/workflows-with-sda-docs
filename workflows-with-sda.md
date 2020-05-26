@@ -19,7 +19,7 @@ Device Management provides two independent, integrated services to provide a sol
 ## Terminology
 
 - **Task** - An operation a technician needs to perform on a remote IoT device. You predefine each task and set parameters to control its execution in a specific workflow.
-- **Workflow** – A list of tasks, associated with a specific user and with a specific group of devices in the account. A workflow has a planned execution time.
+- **Workflow** – A list of tasks associated with a specific user and with a specific group of devices in the account. A workflow has a planned execution time.
 - **Workflow run** – A specific run of a workflow (by the mobile device on the Pelion device) that contains operational logs and task outputs. (???)
 
 ## Application (Demo???)
@@ -35,17 +35,17 @@ To set up your environment to test this feature, you need:
 
 - An [ST DISCO-L475VG-IOT01A](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/) device.
 
-    A Pelion managed device which will securely execute the workflows.
+    An IoT device on which you will securely execute the workflows.
 
-- A [PDM Mobile app](https://github.com/armPelionEdge/peliondevicemanagement-android) (Android only).
+- An android device on which you install the [PDM mobile app](https://github.com/armPelionEdge/peliondevicemanagement-android) (Android only).
 
-    A moderator between Device Management and remote IoT device. It syncs workflows when connected to Device Management and executes workflows over BLE when in the vicinity of the IoT devices.
+    A moderator between Device Management and remote IoT device. It synchronizes workflows when connected to Device Management and executes workflows over BLE when in the vicinity of IoT devices.
 
 ## Step-by-step guide
 
 1. Deploy an IoT device.
 
-    Follow these [instructions](https://github.com/armPelionEdge/workflows-with-secure-device-access-client/blob/master/README.md) to build and flash your DISCO device. (??? how about connecting?)
+    Follow these [instructions](https://github.com/armPelionEdge/workflows-with-secure-device-access-client/blob/master/README.md) to build and flash your DISCO device. (??? how about connecting?)(Should this step be in the prerequisites section?)
 
 1. Create access policies and assign them to user groups:
 
@@ -60,7 +60,7 @@ To set up your environment to test this feature, you need:
 
     1. Create separate access policies for different groups, users or devices with different scopes.(???)
         1. Click **+ New access policy** at the top right of the screen.
-        1. The **Token granted for** field takes integer values with unit *days*. For example, `3` means the access policy is valid for 3 days.
+        1. The **Token granted for** field takes integer values with unit *days*. For example, `3` means the access policy is valid for three days.
         1. Under **Scope**, select **Selected functions** and type one of these options, or both on  separate lines:
             - *read-data*: To read file from the device.
             - *configure*: To write file to the device.
@@ -68,95 +68,146 @@ To set up your environment to test this feature, you need:
 
         If you use developer credentials, you can find the device endpoint name in the *mbed_cloud_dev_credentials.c* file you downloaded earlier (???). In production, use the device endpoint name given to the device during the factory provisioning process. For more information about the factory provisioning process, please see the [Pelion Device Management Factory Provisioning documentation site](https://www.pelion.com/docs/device-management-provision/latest/introduction/index.html).
 
-    1. Assign the policy to a group or specific user.
-    1. Click **Finish**.
-    1. Click **Activate** on **Policy details** page to enable the policy.
-
         <img src="./assets/sda.png">
 
-1. Create, schedule and assign workflows:
+    1. Assign the policy to a group or specific user.
+    1. Click **Finish**.
+    1. Activate your policy:
 
-    1. In Device Management Portal, navigate to **Jobs** under **Job Management**.
-    1. Create a new job by clicking **+ Add new job**, on top right corner.
-    1. Enter the **Job Name** and **Description**. The name should be unique for an account.
-    1. Enter the **Location**, this is just a text field which can be formatted in the most suitable way for the assignee to find the location of the devices, for example zip code or latitude/longitude coordinates in a text format.
-    1. **Assign** the job to a user. Note that each job must be assigned to exactly one user, and can only be synchronized to the mobile app which that user is logged into.
-    1. Assign a planned start date and time. This is indicative to the user when they are expected to perform the job (it does not automatically start at that time).
-    1. Add the **Tasks**
-        1. *Read*: Specify the file path on the target device.
-        1. *Write*: Select a file from your local computer to upload and sepcify the file path on the target device.
-    The file path should be a text string. A typical file path is a slash-separated (/) list of directory names followed by a file name.
-    1. Specify the **Devices** on which the job has to be performed. To add more than one **Device IDs / Endpoint names** use separate lines.
-    1. Create the job.
-    1. All jobs are initialized to a *Pending* state when created.
-        - Once a workflow is downloaded, it can no longer be edited.
-        - Also, you can only delete the workflow when it is in this state. A workflow that was downloaded can only be marked as deleted and would remain visible in the system.
+        1. On the **Access policies** page, click the policy.
+
+            The **Policy details** page is displayed on the right side of the screen.
+
+        1. Click the icon next to the Inactive label at the top left corner of the pane.
+
+            A popup window prompts you to confirm policy activation.
+
+        1. Click **Activate policy**.
+
+1. Create, schedule and assign workflows: (??? workflows or jobs?)
+
+    1. In Device Management Portal, select **Job Management** > **Jobs**.
+    1. Click **+ Add new job** at the top right corner of the screen.
+
+        This opens the **New job** window.
 
         <img src="assets/jobs_creation_portal.png"/>
+    1. Enter a **Job Name** and **Description**. The name should be unique for an account.(???)
+    1. Enter a **Location**. This is a text field that you can populate with the most suitable details to enable the assignee to find the location of the devices; for example, zip code or latitude/longitude coordinates in a text format.
+    1. Select a user from the **Assign To** dropdown.
 
-1. Install the PDM mobile app and log in using the personal Device Management credentials of the user to you assigned jobs:
+        **Note:** Each job must be assigned to exactly one technician and can only be synchronized to the mobile application that the technician is logged into.
 
-    1. Select the account/team from the list of accounts.
-    1. If you are associated with single team then you will be directly redirected to the **Pending Jobs** page.
-    1. From navigation drawer, if you wish to select another account you can click on **Switch Account** which will navigate back to accounts page.
+    1. From the **Planned Start** calendar, select a start date and time.
 
-        <img src="assets/login.png" width="270" height="550"/>
-        <img src="assets/accounts.png" width="270" height="550"/>
-        <img src="assets/navigation_drawer.png" width="270" height="550"/>
+        This indicates to the technician when they are expected to perform the job; the system does not automatically trigger anything at this time.
 
-    **Note:** Make sure you have Internet access for this step to complete successfully.
+    1. Click **Add Task** and select:
+        - **Read file**: Specify the file path on the target device.
+        - **Write file**: Upload a file from your local computer and specify the destination file path on the target device.
 
-1. Download the assigned jobs using the PDM mobile app.
+        The file path should be a text string. A typical file path is a slash-separated (/) list of directory names followed by a file name.
 
-    When on the **Pending Jobs** page, the app will automatically starts downloading new jobs and sync it for offline execution. Pull down refresh is available to manually force the app to sync the jobs from Device Management. Each cell on this page is dedicated to an individual job (distinguisable by unique name) assigned to the logged in user. The cell contains information like Job name, number of device, SDA token valid date/time, and the location.
+    1. Under **Devices**, select the **Device IDs** or **Endpoint names** option buttons and enter the device ID or endpoint name of the IoT device on which the technician must perform the job. To add multiple device IDs or endpoint names use a separate line for each device. (???does the device have to be registered in PDM?)
+    1. Click **Create Job**.
 
-    **Note:** Make sure you have Internet access for this step to complete successfully.
+        Device Management creates the jobs and marks its status as **Pending**.
 
-    Job states -
+        After the technician downloads the workflow, you can no longer edit it. (???job or workflow?)
 
-    - *Ready* - represented by blue color icon, indicating that the job's assests and valid SDA token has been synced and is ready for offline execution.
-    - *All done* - represented by green color icon, indicating all tasks associated to the job has ran on all the assigned devices. The workflow runs are ready to be uploaded to Device Management.
-    - *Not ready* - represented by yellow color icon, indicating that the job is not ready for offline execution as all assests related to the job have not been downloaded.
-    - *Expired* - represented by red color icon, indicating that the token associated to the job has expired, thus the job is not ready for offline execution. User can request for a new SDA token by going into the **Job details** page. Note: for requesting new SDA token you will need Internet access.
+        You can only delete the workflow when it is in this state. A workflow that has been downloaded can only be marked as deleted and remains visible in the system. (???)
 
-        <img src="assets/joblist_pending.png" width="270" height="550"/>
-        <img src="assets/job_sda_expired.png" width="270" height="550"/>
+1. Log in to the PDM mobile application using the personal Device Management credentials of the technician to whom you assigned jobs.
 
-1. Execute the job on the remote IoT devices using the PDM mobile app:
+    **Note:** You need internet access for this step.
 
-    1. Go to the **Job details** page and click on **Run Job** button. The app will start BLE discovery for nearby Pelion devices, once found it will then start executing the tasks associated to the job. The app will run the tasks on as many devices as it discovers in its vicinity. The user has also an option to execute the job on an individual device by swiping left and clicking on the run button.
+    <img src="assets/login.png" width="270" height="550"/>
 
-    **Note:** If your Bluetooth is turned off, then a dialog box will appear requesting user to turn on Bluetooth. Similarly, if your location is disabled, similar dialog box will appear. Location service is needed to scan the nearby BLE devices.
+    If you are associated with single team, you are redirected to the **Pending Jobs** page.
 
-    1. You can stop the execution of the task by clicking on the **Stop** button, located at the bottom of the screen.
-    1. If there are no devices nearby, then **No device found** status will be shown with retry button to re-scan the nearby BLE devices.
-    1. You can view the status of the tasks on **Job run** page.
-        - *Running* indicates that the task is under execution.
-        - *Completed* indicates that the task has been performed on the device and the result is stored in the application.
+    Otherwise, select an account from the list of accounts.
 
-        <br></br>
+    <img src="assets/accounts.png" width="270" height="550"/>
+
+    To switch accounts, tap **Switch Account** on the navigation bar to navigate back to the **Accounts** page.
+
+    <img src="assets/navigation_drawer.png" width="270" height="550"/>
+
+1. Download assigned jobs using the PDM mobile app.
+
+    When you open the **Pending Jobs** page, the application automatically starts downloading new jobs and synchronizes jobs for offline execution.
+
+    You can also use pull-to-refresh to force the application to synchronize the jobs from Device Management.
+
+    **Note:** You need internet access for this step.
+
+    <img src="assets/joblist_pending.png" width="270" height="550"/>
+    <img src="assets/job_sda_expired.png" width="270" height="550"/>
+
+    Each cell on this page represents a single job assigned to the logged in technician. The cell contains information, including job name, number of device (???), SDA token valid date/time, and location (??? device location?).
+
+    Job states:
+
+    - **Ready** - Blue icon, indicates that the job's assets and a valid SDA token have been synchronized and are ready for offline execution.
+    - **All done** - Green icon, indicates all tasks associated to the job ran on all assigned devices. The workflow runs are ready to be uploaded to Device Management.
+    - **Not ready** - Yellow icon, indicates the job is not ready for offline execution as all assets related to the job have not been downloaded.(??? Not available?)
+    - **Expired** - Red icon, indicates the token associated to the job has expired; therefore, the job is not ready for offline execution. You can request a new SDA token from the **Job details** page. (??? How do you get there? Tap the job cell?)
+
+       **Note:** You need internet access to request a new SDA token.
+
+1. Execute the job on your nearby IoT devices using the PDM mobile app:
+
+    1. Go to the **Job details** page and tap **Run Job**.
+
         <img src="assets/job_swipe_run_device.png" width="270" height="550"/>
+
+       The application runs BLE discovery for nearby Pelion devices, and then starts executing the tasks associated to the job.
+
+       If there are no devices nearby, the application presents a **No device found** message and a **Retry** button, which you can tap to re-scan the nearby BLE devices.
+
+       The application runs the tasks on as many devices as it discovers in its vicinity. You can also execute the job on an individual device by swiping left and tapping **Run**.
+
+        **Note:** If your Bluetooth is turned off, a dialog box prompts you to turn on Bluetooth. If your location is disabled, a similar dialog box appears. You need to turn on location services to scan for nearby BLE devices.
+
         <img src="assets/ble_turnon.png" width="270" height="550"/>
         <img src="assets/location_service_required.png" width="270" height="550"/>
-        <img src="assets/job_running.png" width="270" height="550"/>
+
+    1. To stop the execution of the task, tap **Stop** at the bottom of the screen.
+
+    <img src="assets/job_running.png" width="270" height="550"/>
+
+    1. To view the task status, open the **Job Run** page.
+
+        - **Running** indicates that the task is being executed.
+        - **Completed** indicates that the task was executed on the device and the result is stored in the application.
+
         <img src="assets/job_finish.png" width="270" height="550"/>
 
 1. Upload the workflow runs to Device Management:
 
-    1. The **Completed Jobs** page lists all the jobs which have been completed, meaning the tasks assigned to the job has been executed on all the devices associated to the job.
-    1. To sync the workflow runs with Device Management, click on **Upload** button.
+    1. Open the **Completed Jobs** page.
+
+      This page lists all completed jobs. This means that tasks assigned to the job have been executed on all devices associated to the job.
+
+    1. To synchronize the workflow runs with Device Management, tap the **Upload** button.
 
         <img src="assets/job_upload.png" width="270" height="550"/>
         <img src="assets/job_uploading.png" width="270" height="550"/>
 
-1. In Device Management Portal, inspect the workflow results:
+1. Inspect the workflow results in Device Management Portal:
 
-    1. Navigate to **Jobs** under **Job Management**.
-    1. All jobs are initialized to a *Pending* state when created.
-    1. Once a job has been synchronized to a mobile device by the assignee, the status will update to *In progress*.
-    1. When the job is completed and the assignee has uploaded the workflow runs, the status updates to *Complete*.
-    1. While in the *Pending* state, minimal details can be seen for a job.
-    1. Once *In progress* and *Complete*, job metrics are displayed. Any workflow runs uploaded by the assignee can be viewed. Note that there is a separate log for each device to which the task was applied.
-    1. If a Task requires a specific payload to be transferred back to Pelion (e.g. “Read file”) then the payload will be available in the run log for each separate device. Click the button to download the file to your local computer.
+    1. In Device Management Portal, select **Job Management** > **Jobs**.
 
-    <img src="assets/job_summary.png" width="400" height="500"/>
+        Device Management initially assigns all jobs **Pending** status.
+
+        When a technician downloads a job to a mobile device, Device Management updates the status to **In progress**.
+
+        After the job is complete and the technician uploads the workflow runs, Device Management updates the status to **Complete**.
+
+        Once *In progress* and *Complete*, job metrics are displayed. Any workflow runs uploaded by the assignee can be viewed. Note that there is a separate log for each device to which the task was applied. (??? are there metrics for in progress jobs?)
+
+    1. Click a job from the list to open the **Job details** window for the job.   
+
+        When a task requires transferring a specific payload to Device Management (for example, “Read file”), the payload is available in the run log for each device. Click the button to download the file to your computer. (???)
+
+       <img src="assets/job_summary.png" width="400" height="500"/>
