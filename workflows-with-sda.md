@@ -4,7 +4,7 @@ This document explains how to use Pelion services to manage workflows that requi
 
 - [Introduction](#introduction)
 - [Terminology](#terminology)
-- [Tutorial: Setting up and executing workflows with Secure Device Access (SDA)](setting-up-and-executing-workflows-with-sda)  
+- [Tutorial: Setting up and executing workflows with Secure Device Access (SDA)](#tutorial:-setting-up-and-executing-workflows-with-sda)  
 
 ## Introduction
 
@@ -29,7 +29,7 @@ Device Management provides two independent, integrated services to provide a sol
 - **Workflow** – A list of tasks associated with a specific user and with a specific group of devices in the account. A workflow has a planned execution time.
 - **Workflow run** – A specific run of a workflow - carried out using an Android device on an IoT device - including related operational logs and task outputs.
 
-## Setting up and executing workflows with SDA
+## Tutorial: Setting up and executing workflows with SDA
 
 This tutorial takes you through the steps required to execute a simple use case of enabling a technician to read and write files from and to remote IoT devices.
 
