@@ -66,11 +66,12 @@ A moderator between PDM and remote IoT device. It syncs workflows when connected
     1. Add the **Tasks**
         1. *Read*: Specify the file path on the target device.
         1. *Write*: Select a file from your local computer to upload and sepcify the file path on the target device.
-    The file path should be a text string. A typical file path is a slash-separated (/) list of directory names followed by a file name.
+    The file path should be a text string. A typical file path should start with /fs followed by a file name (/fs/filename.txt). Maximum characters allowed for fileName is 60.
     1. Specify the **Devices** on which the job has to be performed. To add more than one **Device IDs / Endpoint names** use separate lines.
     1. Create the job.
     1. All jobs are initialized to a *Pending* state when created.
         - Once a workflow is downloaded, it can no longer be edited.
+        <!-- Delete should be there or not is not clear, also Jobs can be deleted in other state as well in 2-3 attempts. -->
         - Also, you can only delete the workflow when it is in this state. A workflow that was downloaded can only be marked as deleted and would remain visible in the system.
 
     <img src="assets/jobs_creation_portal.png"/>
@@ -88,7 +89,7 @@ A moderator between PDM and remote IoT device. It syncs workflows when connected
 
 1. Using PDM mobile app, download the assigned jobs.
 
-    When on the **Pending Jobs** page, the app will automatically starts downloading new jobs and sync it for offline execution. Pull down refresh is available to manually force the app to sync the jobs from PDM. Each cell on this page is dedicated to an individual job (distinguisable by unique name) assigned to the logged in user. The cell contains information like Job name, number of device, SDA token valid date/time, and the location.
+    When on the **Pending Jobs** page, the app will automatically starts downloading new jobs and sync it for offline execution. Pull down refresh is available to manually force the app to sync the jobs from PDM. Each cell on this page is dedicated to an individual job (distinguishable by unique name) assigned to the logged in user. The cell contains information like Job name, number of device, SDA token valid date/time, and the location.
 
     **Note:** Make sure you have Internet access for this step to complete successfully.
 
@@ -112,6 +113,8 @@ A moderator between PDM and remote IoT device. It syncs workflows when connected
     1. You can view the status of the tasks on **Job run** page.
         - *Running* indicates that the task is under execution.
         - *Completed* indicates that the task has been performed on the device and the result is stored in the application.
+        <!-- If some error happens on device for example try to read data from file location which doesn't exists then app shows Completed and -1 error code is send to cloud, Also same behaviour is there in case of portal as well, it shows Complete for job which was executed and encounter some error. -->
+        - *Failed* indicates ble connection lost between device and mobile app.
 
         <br></br>
         <img src="assets/job_swipe_run_device.png" width="270" height="550"/>

@@ -28,7 +28,7 @@
 - More than 50 devices in one workflow is not supported.
 
 ### Known Issues (workflows-with-sda-client)
-- Read and write max file size is 1.7kB.
+- Read and write max file size is 1kB.
 
 ### Out of scope
 - Custom task types other than *configure* and *read-data*.
