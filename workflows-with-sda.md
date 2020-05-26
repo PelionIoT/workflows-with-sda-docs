@@ -1,5 +1,11 @@
 # Workflows with Secure Device Access
 
+This document explains how to use Pelion services to manage workflows that require technicians to perform tasks on IoT devices in areas without internet access.
+
+- [Introduction](#introduction)
+- [Terminology](#terminology)
+- [Tutorial: Setting up and executing workflows with Secure Device Access (SDA)](tutorial:-setting-up-and-executing-workflows-with-sda)  
+
 ## Introduction
 
 Pelion Device Management lets you manage workflows and execute them securely on remote IoT devices.
@@ -18,22 +24,24 @@ Device Management provides two independent, integrated services to provide a sol
 
 ## Terminology
 
+- **Scope** - A collection of tasks that a technician has permission to perform.
 - **Task** - An operation a technician needs to perform on a remote IoT device. You predefine each task and set parameters to control its execution in a specific workflow.
 - **Workflow** – A list of tasks associated with a specific user and with a specific group of devices in the account. A workflow has a planned execution time.
-- **Workflow run** – A specific run of a workflow (by the mobile device on the Pelion device) that contains operational logs and task outputs. (???)
+- **Workflow run** – A specific run of a workflow - carried out using an Android device on an IoT device - including related operational logs and task outputs.
 
-## Application (Demo???)
-Let's consider a simple use case where the requirement is to securely read and write files from and to remote IoT devices.
+## Tutorial: Setting up and executing workflows with SDA
 
-## Requirements
+This tutorial takes you through the steps required to execute a simple use case of enabling a technician to read and write files from and to remote IoT devices.
 
-To set up your environment to test this feature, you need:
+### Requirements
+
+To set up your environment for this demo, you'll need:
 
 - A [Device Management account](https://portal.mbedcloud.com/login).
 
     **Note:** The account needs to have **Secure device access** and **Workflow management** feature activated. You can [raise a request](https://portal.mbedcloud.com/contact) to get those features enabled. To create access policies and workflows, you also need **Administrator** privileges in the account.
 
-- An [ST DISCO-L475VG-IOT01A](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/) device.
+- An [ST DISCO-L475VG-IOT01A](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/) device on which you install the [workflows-with-secure-device-access-client application]((https://github.com/armPelionEdge/workflows-with-secure-device-access-client/blob/master/README.md).
 
     An IoT device on which you will securely execute the workflows.
 
@@ -41,11 +49,7 @@ To set up your environment to test this feature, you need:
 
     A moderator between Device Management and remote IoT device. It synchronizes workflows when connected to Device Management and executes workflows over BLE when in the vicinity of IoT devices.
 
-## Step-by-step guide
-
-1. Deploy an IoT device.
-
-    Follow these [instructions](https://github.com/armPelionEdge/workflows-with-secure-device-access-client/blob/master/README.md) to build and flash your DISCO device. (??? how about connecting?)(Should this step be in the prerequisites section?)
+### Step-by-step guide
 
 1. Create access policies and assign them to user groups:
 
@@ -58,7 +62,7 @@ To set up your environment to test this feature, you need:
 
         **Note:** Skip these steps if you already have this policy in your team.
 
-    1. Create separate access policies for different groups, users or devices with different scopes.(???)
+    1. Create separate access policies for different groups, users or devices with different scopes.
         1. Click **+ New access policy** at the top right of the screen.
         1. The **Token granted for** field takes integer values with unit *days*. For example, `3` means the access policy is valid for three days.
         1. Under **Scope**, select **Selected functions** and type one of these options, or both on  separate lines:
@@ -66,7 +70,7 @@ To set up your environment to test this feature, you need:
             - *configure*: To write file to the device.
         1. Under **Identify devices** by, select **Endpoint name** and enter your device's endpoint name in the textbox below.
 
-        If you use developer credentials, you can find the device endpoint name in the *mbed_cloud_dev_credentials.c* file you downloaded earlier (???). In production, use the device endpoint name given to the device during the factory provisioning process. For more information about the factory provisioning process, please see the [Pelion Device Management Factory Provisioning documentation site](https://www.pelion.com/docs/device-management-provision/latest/introduction/index.html).
+        If you use developer credentials, you can find the device endpoint name in the *mbed_cloud_dev_credentials.c* file you downloaded when you set up the [workflows-with-secure-device-access-client application]((https://github.com/armPelionEdge/workflows-with-secure-device-access-client/blob/master/README.md). In production, use the device endpoint name given to the device during the factory provisioning process. For more information about the factory provisioning process, please see the [Pelion Device Management Factory Provisioning documentation site](https://www.pelion.com/docs/device-management-provision/latest/introduction/index.html).
 
         <img src="./assets/sda.png">
 
@@ -208,6 +212,6 @@ To set up your environment to test this feature, you need:
 
     1. Click a job from the list to open the **Job details** window for the job.   
 
-        When a task requires transferring a specific payload to Device Management (for example, “Read file”), the payload is available in the run log for each device. Click the button to download the file to your computer. (???)
+        When a task requires transferring a specific payload to Device Management (for example, “Read file”), the payload is available in the run log for each device. Click the button to download the file to your computer. 
 
        <img src="assets/job_summary.png" width="400" height="500"/>
