@@ -184,33 +184,35 @@ For this demo, you need:
 
         <img src="assets/job_swipe_run_device.png" width="270" height="550"/>
 
-       The application runs BLE discovery for nearby Pelion devices, and then starts executing the tasks associated to the job.
+       The application runs BLE discovery for nearby Pelion devices and then starts executing the tasks associated to the job.
 
        If there are no devices nearby, the application presents a **No device found** message and a **Retry** button, which you can tap to re-scan the nearby BLE devices.
 
        The application runs the tasks on as many devices as it discovers in its vicinity. You can also execute the job on an individual device by swiping left and tapping **Run**.
 
-        **Note:** If your Bluetooth is turned off, a dialog box prompts you to turn on Bluetooth. If your location is disabled, a similar dialog box appears. You need to turn on location services to scan for nearby BLE devices.
+        If your Bluetooth is turned off, a dialog box prompts you to turn on Bluetooth.
+
+        If your location is disabled, a similar dialog box appears. You need to turn on location services to scan for nearby BLE devices.
 
         <img src="assets/ble_turnon.png" width="270" height="550"/>
         <img src="assets/location_service_required.png" width="270" height="550"/>
 
     1. To stop the execution of the task, tap **Stop** at the bottom of the screen.
 
-    <img src="assets/job_running.png" width="270" height="550"/>
+        <img src="assets/job_running.png" width="270" height="550"/>
 
     1. To view the task status, open the **Job Run** page.
 
         - **Running** indicates that the task is being executed.
         - **Completed** indicates that the task was executed on the device and the result is stored in the application.
 
-        <img src="assets/job_finish.png" width="270" height="550"/>
+            <img src="assets/job_finish.png" width="270" height="550"/>
 
 1. Upload the job runs to Device Management:
 
     1. Open the **Completed Jobs** page.
 
-      This page lists all completed jobs. This means that tasks assigned to the job have been executed on all devices associated to the job.
+          This page lists all completed jobs. When a job is marked as completed, it means that all tasks assigned to the job have been executed on all devices associated to the job.
 
     1. To synchronize the job runs with Device Management, tap the **Upload** button.
 
@@ -231,6 +233,6 @@ For this demo, you need:
 
     1. Click a job from the list to open the **Job details** window for the job.   
 
-        When a task requires transferring a specific payload to Device Management (for example, “Read file”), the payload is available in the run log for each device. Click the button to download the file to your computer.
+        <img src="assets/job_summary.png" width="400" height="500"/>
 
-       <img src="assets/job_summary.png" width="400" height="500"/>
+        When a task requires transferring a specific payload to Device Management (for example, “Read file”), the payload is available in the run log for each device. Click the button to download the file to your computer.
