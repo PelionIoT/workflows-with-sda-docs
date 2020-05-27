@@ -10,17 +10,19 @@ This document explains how to use Pelion services to manage workflows that requi
 
 Pelion Device Management lets you manage workflows and execute them securely on remote IoT devices.
 
-A workflow might require a technician to configure devices that are offline or outside the network coverage area. The offline setting presents a challenge in validating the identity of both the device and the user without accessing the central Identity & Access Management (IAM) system.
+A workflow might require a technician to configure devices that are offline or outside the network coverage area. The offline setting presents a challenge in validating the identity of the device and the user without accessing the central Identity & Access Management (IAM) system.
 
 Device Management provides two independent, integrated services to provide a solution to this use case:
 
 - Workflow Management Service (WMS)
 
-    Helps define and manage the lifecycle of tasks you perform on remote IoT devices and provides a set of APIs you can integrate with third-party technician management systems to synchronize user identities, times and locations of jobs, and so on, between systems.
+    Helps define and manage the lifecycle of tasks you perform on remote IoT devices and provides a set of APIs you can integrate with third-party technician management systems to synchronize user identities, the times and locations of jobs, and so on, between systems.
 
 - Secure Device Access (SDA)
 
-    Authenticates and authorizes users who execute jobs on remote IoT device in an offline setting. For information about Secure Device Access (SDA), please see the [public SDA documentation](https://www.pelion.com/docs/device-management/current/device-management/secure-device-access.html).
+    Authenticates and authorizes users who execute jobs on remote IoT device in an offline setting.
+
+    For more information about Secure Device Access (SDA), please see the [public SDA documentation](https://www.pelion.com/docs/device-management/current/device-management/secure-device-access.html).
 
 ## Terminology
 
@@ -39,9 +41,9 @@ For this demo, you need:
 
 - A [Device Management account](https://portal.mbedcloud.com/login).
 
-    **Note:** The account needs to have **Secure device access** and **Workflow management** feature activated. You can [raise a request](https://portal.mbedcloud.com/contact) to get those features enabled. To create access policies and jobs, you also need **Administrator** privileges in the account.
+    **Note:** You must have **Secure device access** and **Workflow management** features activated in the account needs to have. You can [open a request](https://portal.mbedcloud.com/contact) to have these features enabled. You also need **Administrator** privileges in the account to create access policies and jobs.
 
-- An [ST DISCO-L475VG-IOT01A](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/) device on which you install the [workflows-with-secure-device-access-client application]((https://github.com/armPelionEdge/workflows-with-secure-device-access-client/blob/master/README.md).
+- An [ST DISCO-L475VG-IOT01A](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/) device on which you install the [workflows-with-secure-device-access-client application](https://github.com/armPelionEdge/workflows-with-secure-device-access-client/blob/master/README.md).
 
     An IoT device on which you will securely execute the workflows.
 
