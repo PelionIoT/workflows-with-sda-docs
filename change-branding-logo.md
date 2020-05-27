@@ -1,10 +1,13 @@
-# Custom logo
+# Customizing team branding in Device Management
 
-Follow these steps to update the logo of your PDM account. This will be applied to both the Portal and the PDM mobile app.
-1. Navigate to **Team Branding** under **Team Configuration**.
-1. Select **Logo** under **Images**
-1. Choose **Landscape** and upload the image file.
-1. Save the changes.
-1. In the mobile app, the new logo is downloaded at login.
+To update your logo in Device Management Portal and the Pelion Device Management (PDM) mobile app:
 
-<img src="assets/portal_branding.png"/>
+1. In Device Management Portal, select **Team Configuration** > **Team branding**.
+1. Scroll down to the **Images** section.
+1. Click the **Choose file** button under **Logo Landscape** and upload an image file.
+
+    <img src="assets/portal_branding.png"/>
+
+1. Scroll down to the bottom of the page and click **Save**.
+
+    The PDM mobile app downloads the new logo when you log in.
