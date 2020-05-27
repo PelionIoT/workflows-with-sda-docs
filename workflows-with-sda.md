@@ -43,13 +43,13 @@ For this demo, you need:
 
     **Note:** You must have **Secure device access** and **Workflow management** features activated in the account needs to have. You can [open a request](https://portal.mbedcloud.com/contact) to have these features enabled. You also need **Administrator** privileges in the account to create access policies and jobs.
 
-- An [ST DISCO-L475VG-IOT01A](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/) device on which you install the [workflows-with-secure-device-access-client application](https://github.com/armPelionEdge/workflows-with-secure-device-access-client/blob/master/README.md).
+- An [ST DISCO-L475VG-IOT01A](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/) device on which you [install the workflows-with-secure-device-access-client application](https://github.com/armPelionEdge/alphatronics-docs/blob/master/workflows-with-secure-device-access-client.md).
 
     An IoT device on which you will securely execute the workflows.
 
-- An android device on which you install the [PDM mobile application](https://github.com/armPelionEdge/peliondevicemanagement-android) (Android only).
+- An Android device on which you install the PDM mobile application.
 
-    A moderator between Device Management and remote IoT device. The PDM mobile application synchronizes workflows when connected to Device Management and executes jobs over BLE when in the vicinity of IoT devices.
+    The PDM mobile application moderates between Device Management and remote IoT device. You use the application to synchronize workflows when connected to Device Management and to execute jobs over BLE in the vicinity of IoT devices.
 
 ### Step-by-step guide
 
@@ -69,15 +69,15 @@ For this demo, you need:
 
     1. Create separate access policies for different groups, users or devices with different scopes.
         1. Click **+ New access policy** at the top right of the screen.
-        1. The **Token granted for** field takes integer values with unit *days*. For example, `3` means the access policy is valid for three days.
+        1. Enter an integer in the **Token granted for** field to define the number of days for which the token is valid. For example, `3` means the token is valid for three days.
         1. Under **Scope**, select **Selected functions** and type one of these options, or both on  separate lines:
             - *read-data*: To read file from the device.
             - *configure*: To write file to the device.
         1. Under **Identify devices** by, select **Endpoint name** and enter your device's endpoint name in the textbox below.
 
-        If you use developer credentials, you can find the device endpoint name in the *mbed_cloud_dev_credentials.c* file you downloaded when you set up the [workflows-with-secure-device-access-client application]((https://github.com/armPelionEdge/workflows-with-secure-device-access-client/blob/master/README.md). In production, use the device endpoint name given to the device during the factory provisioning process. For more information about the factory provisioning process, please see the [Pelion Device Management Factory Provisioning documentation site](https://www.pelion.com/docs/device-management-provision/latest/introduction/index.html).
+            If you use developer credentials, you can find the device endpoint name in the *mbed_cloud_dev_credentials.c* file you downloaded when you set up the [workflows-with-secure-device-access-client application]((https://github.com/armPelionEdge/workflows-with-secure-device-access-client/blob/master/README.md). In production, use the device endpoint name given to the device during the factory provisioning process. For more information about the factory provisioning process, please see the [Pelion Device Management Factory Provisioning documentation site](https://www.pelion.com/docs/device-management-provision/latest/introduction/index.html).
 
-        <img src="./assets/sda.png">
+            <img src="./assets/sda.png">
 
         1. Assign the policy to a group or specific user.
         1. Click **Finish**.
