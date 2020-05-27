@@ -75,7 +75,9 @@ For this demo, you need:
             - *configure*: To write file to the device.
         1. Under **Identify devices** by, select **Endpoint name** and enter your device's endpoint name in the textbox below.
 
-            If you use developer credentials, you can find the device endpoint name in the *mbed_cloud_dev_credentials.c* file you downloaded when you set up the [workflows-with-secure-device-access-client application]((https://github.com/armPelionEdge/workflows-with-secure-device-access-client/blob/master/README.md). In production, use the device endpoint name given to the device during the factory provisioning process. For more information about the factory provisioning process, please see the [Pelion Device Management Factory Provisioning documentation site](https://www.pelion.com/docs/device-management-provision/latest/introduction/index.html).
+            If you use developer credentials, you can find the device endpoint name in the *mbed_cloud_dev_credentials.c* file you downloaded when you set up the [workflows-with-secure-device-access-client application](https://github.com/armPelionEdge/workflows-with-secure-device-access-client/blob/master/README.md).
+
+            In production, use the device endpoint name given to the device during the factory provisioning process. For more information about the factory provisioning process, please see the [Pelion Device Management Factory Provisioning documentation site](https://www.pelion.com/docs/device-management-provision/latest/introduction/index.html).
 
             <img src="./assets/sda.png">
 
@@ -102,11 +104,17 @@ For this demo, you need:
         This opens the **New job** window.
 
         <img src="assets/jobs_creation_portal.png"/>
-    1. Enter a **Job Name** and **Description**. The job name must be unique in the account.
-    1. Enter a **Location**. This is a text field that you can populate with the most suitable details to enable the assignee to find the location of the devices; for example, zip code or latitude/longitude coordinates in a text format.
+    1. Enter a **Job Name** and **Description**.
+
+        The job name must be unique in the account.
+
+    1. Enter a **Location**.
+
+        This is a text field that you can populate with the most suitable details to enable the assignee to find the location of the devices; for example, zip code or latitude/longitude coordinates in a text format.
+
     1. Select a user from the **Assign To** dropdown.
 
-        **Note:** Each job must be assigned to exactly one technician and can only be synchronized to the mobile application that the technician is logged into.
+        **Note:** Assign each job to a single technician. Only the assigned technician can download the job to their mobile application.
 
     1. From the **Planned Start** calendar, select a start date and time.
 
@@ -118,12 +126,15 @@ For this demo, you need:
 
         The file path should be a text string. A typical file path is a slash-separated (/) list of directory names followed by a file name.
 
-    1. Under **Devices**, select the **Device IDs** or **Endpoint names** option buttons and enter the device ID or endpoint name of the IoT device on which the technician must perform the job. To add multiple device IDs or endpoint names use a separate line for each device.
+    1. Under **Devices**, select the **Device IDs** or **Endpoint names** option buttons and enter the device ID or endpoint name of the IoT device on which the technician must perform the job.
+
+        To add multiple device IDs or endpoint names use a separate line for each device.
+
     1. Click **Create Job**.
 
-        Device Management creates the jobs and marks its status as **Pending**.
+        Device Management creates the jobs and sets their status to **Pending**.
 
-        After the technician downloads the job, you can no longer edit it, but you can delete it. When you delete a job that has been downloaded, it remains visible in the system.
+        After a technician downloads a job, you can no longer edit the job, but you can delete it. When you delete a job that a technician has downloaded, the deleted job remains visible in the system.
 
 1. Log in to the PDM mobile application using the personal Device Management credentials of the technician to whom you assigned jobs.
 
@@ -131,7 +142,7 @@ For this demo, you need:
 
     <img src="assets/login.png" width="270" height="550"/>
 
-    If you are associated with single account, you are redirected to the **Pending Jobs** page.
+    If you are associated to a single account, the application opens the **Pending Jobs** page.
 
     Otherwise, select an account from the list of accounts.
 
@@ -154,20 +165,22 @@ For this demo, you need:
     <img src="assets/joblist_pending.png" width="270" height="550"/>
     <img src="assets/job_sda_expired.png" width="270" height="550"/>
 
-    Each cell on this page represents a single job assigned to the logged in technician. The cell contains information, including job name, the number of devices on which the technician must execute the job, SDA token expiry date/time, and device location.
+    Each cell on this page represents a single job assigned to the logged in technician. The information in the cell includes job name, the number of devices on which the technician must execute the job, SDA token expiry date/time, and device location.
 
     Job states:
 
     - **Ready** - Blue icon, indicates that the job's assets and a valid SDA token have been synchronized and are ready for offline execution.
-    - **All done** - Green icon, indicates all tasks associated to the job ran on all assigned devices. The job runs are ready to be uploaded to Device Management.
+    - **All done** - Green icon, indicates that all tasks associated to the job ran on all assigned devices. The job runs are ready to be uploaded to Device Management.
     - **Not available** - Yellow icon, indicates the job is not ready for offline execution because you have not yet downloaded all assets related to the job.
-    - **Expired** - Red icon, indicates the token associated to the job has expired; therefore, the job is not ready for offline execution. Tap the job cell to open the **Job details** page and request a new SDA token.
+    - **Expired** - Red icon, indicates the token associated to the job has expired and, therefore, the job is not ready for offline execution. Tap the job cell to open the **Job details** page and request a new SDA token.
 
        **Note:** You need internet access to request a new SDA token.
 
 1. Execute the job on your nearby IoT devices using the PDM mobile application:
 
-    1. Go to the **Job details** page and tap **Run Job**.
+    1. Tap a job cell to open the **Job details** page.
+
+    1. Tap **Run Job**.
 
         <img src="assets/job_swipe_run_device.png" width="270" height="550"/>
 
