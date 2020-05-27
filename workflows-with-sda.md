@@ -45,9 +45,9 @@ For this demo, you need:
 
     An IoT device on which you will securely execute the workflows.
 
-- An android device on which you install the [PDM mobile app](https://github.com/armPelionEdge/peliondevicemanagement-android) (Android only).
+- An android device on which you install the [PDM mobile application](https://github.com/armPelionEdge/peliondevicemanagement-android) (Android only).
 
-    A moderator between Device Management and remote IoT device. It synchronizes workflows when connected to Device Management and executes jobs over BLE when in the vicinity of IoT devices.
+    A moderator between Device Management and remote IoT device. The PDM mobile application synchronizes workflows when connected to Device Management and executes jobs over BLE when in the vicinity of IoT devices.
 
 ### Step-by-step guide
 
@@ -141,7 +141,7 @@ For this demo, you need:
 
     <img src="assets/navigation_drawer.png" width="270" height="550"/>
 
-1. Download assigned jobs using the PDM mobile app.
+1. Download assigned jobs using the PDM mobile application.
 
     When you open the **Pending Jobs** page, the application automatically starts downloading new jobs and synchronizes jobs for offline execution.
 
@@ -163,7 +163,7 @@ For this demo, you need:
 
        **Note:** You need internet access to request a new SDA token.
 
-1. Execute the job on your nearby IoT devices using the PDM mobile app:
+1. Execute the job on your nearby IoT devices using the PDM mobile application:
 
     1. Go to the **Job details** page and tap **Run Job**.
 
