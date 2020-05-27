@@ -25,9 +25,9 @@ Device Management provides two independent, integrated services to provide a sol
 ## Terminology
 
 - **Scope** - A collection of tasks that a technician has permission to perform.
-- **Task** - An operation a technician needs to perform on a remote IoT device. You predefine each task and set parameters to control its execution in a specific workflow.
-- **Workflow** – A list of tasks associated with a specific user and with a specific group of devices in the account. A workflow has a planned execution time.
-- **Workflow run** – A specific run of a workflow - carried out using an Android device on an IoT device - including related operational logs and task outputs.
+- **Task** - An operation a technician needs to perform on a remote IoT device. You predefine each task and set parameters to control its execution in a specific job.
+- **Job** – A list of tasks associated with a specific user and with a specific group of devices in the account. A job has a planned execution time.
+- **Job run** – A specific run of a job - carried out using an Android device on an IoT device - including related operational logs and task outputs.
 
 ## Tutorial: Setting up and executing workflows with SDA
 
@@ -35,11 +35,11 @@ This tutorial takes you through the steps required to execute a simple use case 
 
 ### Requirements
 
-To set up your environment for this demo, you'll need:
+For this demo, you need:
 
 - A [Device Management account](https://portal.mbedcloud.com/login).
 
-    **Note:** The account needs to have **Secure device access** and **Workflow management** feature activated. You can [raise a request](https://portal.mbedcloud.com/contact) to get those features enabled. To create access policies and workflows, you also need **Administrator** privileges in the account.
+    **Note:** The account needs to have **Secure device access** and **Workflow management** feature activated. You can [raise a request](https://portal.mbedcloud.com/contact) to get those features enabled. To create access policies and jobs, you also need **Administrator** privileges in the account.
 
 - An [ST DISCO-L475VG-IOT01A](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/) device on which you install the [workflows-with-secure-device-access-client application]((https://github.com/armPelionEdge/workflows-with-secure-device-access-client/blob/master/README.md).
 
@@ -47,20 +47,23 @@ To set up your environment for this demo, you'll need:
 
 - An android device on which you install the [PDM mobile app](https://github.com/armPelionEdge/peliondevicemanagement-android) (Android only).
 
-    A moderator between Device Management and remote IoT device. It synchronizes workflows when connected to Device Management and executes workflows over BLE when in the vicinity of IoT devices.
+    A moderator between Device Management and remote IoT device. It synchronizes workflows when connected to Device Management and executes jobs over BLE when in the vicinity of IoT devices.
 
 ### Step-by-step guide
 
 1. Create access policies and assign them to user groups:
 
     1. In Device Management Portal, select **Access management** > **Access policies**.
-    1. Activate the workflow assignments in your team by creating a global policy:
+    1. Activate the job assignments in your account by creating a global policy:
         1. Click **+ New access policy** at the top right of the screen.
         1. Under **Scope**, select **Selected functions** and set it to *run-workflow*.
-        1. Set the **Device ID** equal to `*`.(???)(???Groups?)
+        1. Set the **Device ID** equal to `*`.
+
+            **Note:** When you set **Device ID** equal to `*` you get a *0 matching device(s) currently in device directory* message. This is expected behavior because your devices are always offline and, therefore, have not registered in your device directory.
+        1. Assign the policy to a group or specific user.
         1. Click **Finish**.
 
-        **Note:** Skip these steps if you already have this policy in your team.
+        **Note:** Skip these steps if you already have this policy in your account.
 
     1. Create separate access policies for different groups, users or devices with different scopes.
         1. Click **+ New access policy** at the top right of the screen.
@@ -74,21 +77,22 @@ To set up your environment for this demo, you'll need:
 
         <img src="./assets/sda.png">
 
-    1. Assign the policy to a group or specific user.
-    1. Click **Finish**.
-    1. Activate your policy:
+        1. Assign the policy to a group or specific user.
+        1. Click **Finish**.
+
+    1. Activate your policies:
 
         1. On the **Access policies** page, click the policy.
 
-            The **Policy details** page is displayed on the right side of the screen.
+            This opens the **Policy details** page on the right side of the screen.
 
-        1. Click the icon next to the Inactive label at the top left corner of the pane.
+        1. Click **Activate**.
 
-            A popup window prompts you to confirm policy activation.
+            The **Activate policy** popup window prompts you to confirm policy activation.
 
         1. Click **Activate policy**.
 
-1. Create, schedule and assign workflows: (??? workflows or jobs?)
+1. Create, schedule and assign jobs:
 
     1. In Device Management Portal, select **Job Management** > **Jobs**.
     1. Click **+ Add new job** at the top right corner of the screen.
@@ -112,14 +116,12 @@ To set up your environment for this demo, you'll need:
 
         The file path should be a text string. A typical file path is a slash-separated (/) list of directory names followed by a file name.
 
-    1. Under **Devices**, select the **Device IDs** or **Endpoint names** option buttons and enter the device ID or endpoint name of the IoT device on which the technician must perform the job. To add multiple device IDs or endpoint names use a separate line for each device. (???does the device have to be registered in PDM?)
+    1. Under **Devices**, select the **Device IDs** or **Endpoint names** option buttons and enter the device ID or endpoint name of the IoT device on which the technician must perform the job. To add multiple device IDs or endpoint names use a separate line for each device.
     1. Click **Create Job**.
 
         Device Management creates the jobs and marks its status as **Pending**.
 
-        After the technician downloads the workflow, you can no longer edit it.
-
-        You can only delete the workflow when it is in this state. A workflow that has been downloaded can only be marked as deleted and remains visible in the system. (???)
+        After the technician downloads the job, you can no longer edit it, but you can delete it. When you delete a job that has been downloaded, it remains visible in the system.
 
 1. Log in to the PDM mobile application using the personal Device Management credentials of the technician to whom you assigned jobs.
 
@@ -127,11 +129,13 @@ To set up your environment for this demo, you'll need:
 
     <img src="assets/login.png" width="270" height="550"/>
 
-    If you are associated with single team, you are redirected to the **Pending Jobs** page.
+    If you are associated with single account, you are redirected to the **Pending Jobs** page.
 
     Otherwise, select an account from the list of accounts.
 
     <img src="assets/accounts.png" width="270" height="550"/>
+
+    **Note:** Accounts in the PDM mobile application are the equivalent of teams in Device Management Portal.
 
     To switch accounts, tap **Switch Account** on the navigation bar to navigate back to the **Accounts** page.
 
@@ -148,14 +152,14 @@ To set up your environment for this demo, you'll need:
     <img src="assets/joblist_pending.png" width="270" height="550"/>
     <img src="assets/job_sda_expired.png" width="270" height="550"/>
 
-    Each cell on this page represents a single job assigned to the logged in technician. The cell contains information, including job name, number of device (???), SDA token valid date/time, and location (??? device location?).
+    Each cell on this page represents a single job assigned to the logged in technician. The cell contains information, including job name, the number of devices on which the technician must execute the job, SDA token expiry date/time, and device location.
 
     Job states:
 
     - **Ready** - Blue icon, indicates that the job's assets and a valid SDA token have been synchronized and are ready for offline execution.
-    - **All done** - Green icon, indicates all tasks associated to the job ran on all assigned devices. The workflow runs are ready to be uploaded to Device Management.
-    - **Not ready** - Yellow icon, indicates the job is not ready for offline execution as all assets related to the job have not been downloaded.(??? Not available?)
-    - **Expired** - Red icon, indicates the token associated to the job has expired; therefore, the job is not ready for offline execution. You can request a new SDA token from the **Job details** page. (??? How do you get there? Tap the job cell?)
+    - **All done** - Green icon, indicates all tasks associated to the job ran on all assigned devices. The job runs are ready to be uploaded to Device Management.
+    - **Not available** - Yellow icon, indicates the job is not ready for offline execution because you have not yet downloaded all assets related to the job.
+    - **Expired** - Red icon, indicates the token associated to the job has expired; therefore, the job is not ready for offline execution. Tap the job cell to open the **Job details** page and request a new SDA token.
 
        **Note:** You need internet access to request a new SDA token.
 
@@ -187,18 +191,18 @@ To set up your environment for this demo, you'll need:
 
         <img src="assets/job_finish.png" width="270" height="550"/>
 
-1. Upload the workflow runs to Device Management:
+1. Upload the job runs to Device Management:
 
     1. Open the **Completed Jobs** page.
 
       This page lists all completed jobs. This means that tasks assigned to the job have been executed on all devices associated to the job.
 
-    1. To synchronize the workflow runs with Device Management, tap the **Upload** button.
+    1. To synchronize the job runs with Device Management, tap the **Upload** button.
 
         <img src="assets/job_upload.png" width="270" height="550"/>
         <img src="assets/job_uploading.png" width="270" height="550"/>
 
-1. Inspect the workflow results in Device Management Portal:
+1. Inspect the job results in Device Management Portal:
 
     1. In Device Management Portal, select **Job Management** > **Jobs**.
 
@@ -206,9 +210,9 @@ To set up your environment for this demo, you'll need:
 
         When a technician downloads a job to a mobile device, Device Management updates the status to **In progress**.
 
-        After the job is complete and the technician uploads the workflow runs, Device Management updates the status to **Complete**.
+        After the job is complete and the technician uploads the job runs, Device Management updates the status to **Complete**.
 
-        Once *In progress* and *Complete*, job metrics are displayed. Any workflow runs uploaded by the assignee can be viewed. Note that there is a separate log for each device to which the task was applied. (??? are there metrics for in progress jobs?)
+        Device Management Portal displays job metrics for jobs that are in **In progress** and **Complete** statuses, including any job runs that the technician uploads. There is a separate log for each device on which the technician runs a task.
 
     1. Click a job from the list to open the **Job details** window for the job.   
 
