@@ -54,7 +54,7 @@ To set up your environment for this demo, you'll need:
 1. Create access policies and assign them to user groups:
 
     1. In Device Management Portal, select **Access management** > **Access policies**.
-    1. Activate the workflow assignments in your team by creating a global policy: (???)
+    1. Activate the workflow assignments in your team by creating a global policy:
         1. Click **+ New access policy** at the top right of the screen.
         1. Under **Scope**, select **Selected functions** and set it to *run-workflow*.
         1. Set the **Device ID** equal to `*`.(???)(???Groups?)
@@ -96,7 +96,7 @@ To set up your environment for this demo, you'll need:
         This opens the **New job** window.
 
         <img src="assets/jobs_creation_portal.png"/>
-    1. Enter a **Job Name** and **Description**. The name should be unique for an account.(???)
+    1. Enter a **Job Name** and **Description**. The job name must be unique in the account.
     1. Enter a **Location**. This is a text field that you can populate with the most suitable details to enable the assignee to find the location of the devices; for example, zip code or latitude/longitude coordinates in a text format.
     1. Select a user from the **Assign To** dropdown.
 
@@ -117,7 +117,7 @@ To set up your environment for this demo, you'll need:
 
         Device Management creates the jobs and marks its status as **Pending**.
 
-        After the technician downloads the workflow, you can no longer edit it. (???job or workflow?)
+        After the technician downloads the workflow, you can no longer edit it.
 
         You can only delete the workflow when it is in this state. A workflow that has been downloaded can only be marked as deleted and remains visible in the system. (???)
 
