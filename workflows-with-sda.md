@@ -54,7 +54,7 @@ A moderator between PDM and remote IoT device. It syncs workflows when connected
     1. Assign the policy to a group or specific user.
     1. Save the policy.
     1. Click **Activate** on **Policy details** page to enable the policy.
-    <img src="./assets/sda.png" width="700" height="850"/>
+    <img src="./assets/sda.png"/>
 
 1. Using Portal, create, schedule and assign workflows.
     1. Navigate to **Jobs** under **Job Management**.
