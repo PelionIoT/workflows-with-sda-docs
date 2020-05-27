@@ -1,4 +1,4 @@
-# workflows-with-secure-device-access-client
+# Building the workflows-with-secure-device-access-client application
 
 This document explains how to build `workflows-with-secure-device-access-client` and flash the binary onto your device.
 
