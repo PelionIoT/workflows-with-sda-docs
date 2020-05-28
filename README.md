@@ -1,6 +1,6 @@
 # workflows-with-sda-docs
 
-This repo contains a set of documents that Arm created for the service Workflows with Secure Device Access:
+This repo contains a set of documents that Arm created for the Workflows with Secure Device Access service:
 
 - [Building the workflows-with-secure-device-access-client application](https://github.com/armPelionEdge/workflows-with-sda-docs/blob/master/workflows-with-secure-device-access-client.md)
 - [Using workflows with Secure Device Access (SDA)](https://github.com/armPelionEdge/workflows-with-sda-docs/blob/master/workflows-with-sda.md)
