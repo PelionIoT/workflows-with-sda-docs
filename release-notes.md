@@ -1,6 +1,6 @@
 # Release notes
 
-## PDM mobile app and workflows-with-sda-client firmware v1.0.0
+## Workflows with Secure Device Access v1.0.0
 
 ### Supported environment and versions
 - IoT device: [ST DISCO-L475VG-IOT01A](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/)
@@ -8,7 +8,8 @@
 - Mbed OS version: 5.15
 - Mobile platform: Android
 - Android OS version: Android Lollipop, 5.0 and higher
-- Pelion Device Management (PDM) mobile app version: 1.0.0
+- Pelion Device Management (PDM) mobile app version: 1.0.2
+- workflows-with-sda-client firmware version: 1.0.1
 
 ### Added
 - Integrated Workflow Management Service (WMS) with Secure Device Access (SDA).
@@ -17,7 +18,11 @@
 - Ability to operate the mobile app in offline mode.
 - Ability to read and write files from remote IoT device.
 - BLE interface between mobile app and IoT device.
-- Developed a simple protocol to handle packets bigger than the BLE MTU size with less fragmentation and less overhead.
+- Handled fragmentation of packets bigger than the BLE MTU size.
+- BLE discover service UUID and service characteristics UUID are customizable.
+- Support for a max file size of 1kB for read and write tasks.
+- Support for `configure` and `read-data` workflow task types.
+
 
 ### Known issues - PDM mobile app
 - Identity providers other than *Native* not supported.
@@ -25,9 +30,7 @@
 - Two-factor authentication (2FA) not supported.
 - If you enter an incorrect password more than five times, you have to reset the password using Device Management Portal.
 - More than 50 devices in one workflow not supported.
-
-### Known issues - workflows-with-sda-client
-- Read and write max file size is 1.7kB.
+- When the application tries to read or write a file of more than 2kB, it sometimes goes into *Pelion DM isn't responding* state.
 
 ### Out of scope
 - Custom task types other than *configure* and *read-data*.
