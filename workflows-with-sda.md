@@ -243,6 +243,6 @@ For this demo, you need:
 
 ## Expected behavior
 
-1. A job expected to fail will be marked as **Completed** in the PDM mobile application and the Portal will provide the logs stating any errors which occurred during the execution. For example - if a job is created to read a file which do not exists on the IoT device then the job will run as expected and be marked as **Completed** in the **Job Run** page of the mobile app. The run logs will be uploaded to Device Management and in Portal you should be able to view the logs stating the error that file do not exists.
+1. The PDM mobile application marks jobs that are expected to fail as **Completed**, and the Portal provides logs indicating any errors that occurred during the execution. For example, if a job has to read a file that does not exist on the IoT device, the job will run as expected and the mobile application will mark the job **Completed** on the **Job Run** page. After the mobile application uploads the run logs to Device Management Portal, you can view the logs, which will indicate that the file does not exist.
 
-1. A job cannot be re-run if it is completed and the run logs are uploaded to Device Management.
+1. A job cannot be rerun after the mobile application marks it as **Completed** and uploads the run logs to Device Management.
