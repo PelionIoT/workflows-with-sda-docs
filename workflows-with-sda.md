@@ -124,7 +124,7 @@ For this demo, you need:
         - **Read file**: Specify the file path on the target device.
         - **Write file**: Upload a file from your local computer and specify the destination file path on the target device.
 
-        The file path should be a text string. A typical file path is a slash-separated (/) list of directory names followed by a file name.
+        The file path should be a text string. A typical file path is a slash-separated (/) list of directory names followed by a file name. For example - the default mount point on the firmware is set to `/fs` so the file path will be `/fs/filename`. Note that the filename size is limited to 256 characters.
 
     1. Under **Devices**, select the **Device IDs** or **Endpoint names** option buttons and enter the device ID or endpoint name of the IoT device on which the technician must perform the job.
 
@@ -205,6 +205,7 @@ For this demo, you need:
 
         - **Running** indicates that the task is being executed.
         - **Completed** indicates that the task was executed on the device and the result is stored in the application.
+        - **Failed** indicates that the BLE connection between the device and mobile application got terminated.
 
             <img src="assets/job_finish.png" width="270" height="550"/>
 
@@ -219,6 +220,8 @@ For this demo, you need:
         <img src="assets/job_upload.png" width="270" height="550"/>
         <img src="assets/job_uploading.png" width="270" height="550"/>
 
+        **Note:** Once the run logs of a job are uploaded to Device Management, the job will be removed from the PDM mobile application on the next login.
+
 1. Inspect the job results in Device Management Portal:
 
     1. In Device Management Portal, select **Job Management** > **Jobs**.
@@ -231,8 +234,15 @@ For this demo, you need:
 
         Device Management Portal displays job metrics for jobs that are in **In progress** and **Complete** statuses, including any job runs that the technician uploads. There is a separate log for each device on which the technician runs a task.
 
-    1. Click a job from the list to open the **Job details** window for the job.   
+    1. Click a job from the list to open the **Job details** window for the job.
 
         <img src="assets/job_summary.png" width="400" height="500"/>
 
         When a task requires transferring a specific payload to Device Management (for example, “Read file”), the payload is available in the run log for each device. Click the button to download the file to your computer.
+
+
+## Expected behavior
+
+1. A job expected to fail will be marked as **Completed** in the PDM mobile application and the Portal will provide the logs stating any errors which occurred during the execution. For example - if a job is created to read a file which do not exists on the IoT device then the job will run as expected and be marked as **Completed** in the **Job Run** page of the mobile app. The run logs will be uploaded to Device Management and in Portal you should be able to view the logs stating the error that file do not exists.
+
+1. A job cannot be re-run if it is completed and the run logs are uploaded to Device Management.
