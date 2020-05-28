@@ -18,10 +18,10 @@
 - Ability to operate the mobile app in offline mode.
 - Ability to read and write files from remote IoT device.
 - BLE interface between mobile app and IoT device.
-- Handled fragementation of packets bigger than the BLE MTU size.
-- BLE discover service uuid and service characteristics uuid are customizable.
-- Supported max file size for read and write task is 1kB.
-- Supported workflow task types `configure` and `read-data`.
+- Handled fragmentation of packets bigger than the BLE MTU size.
+- BLE discover service UUID and service characteristics UUID are customizable.
+- Support for a max file size of 1kB for read and write tasks.
+- Support for `configure` and `read-data` workflow task types.
 
 
 ### Known issues - PDM mobile app
@@ -30,7 +30,7 @@
 - Two-factor authentication (2FA) not supported.
 - If you enter an incorrect password more than five times, you have to reset the password using Device Management Portal.
 - More than 50 devices in one workflow not supported.
-- When try to read or write a file of size more than 2kB, sometimes the app goes into the state *Pelion DM isn't responding*.
+- When the application tries to read or write a file of more than 2kB, it sometimes goes into *Pelion DM isn't responding* state.
 
 ### Out of scope
 - Custom task types other than *configure* and *read-data*.
