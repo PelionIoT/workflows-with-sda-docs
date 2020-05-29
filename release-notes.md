@@ -31,6 +31,7 @@
 - If you enter an incorrect password more than five times, you have to reset the password using Device Management Portal.
 - More than 50 devices in one workflow not supported.
 - When the application tries to read or write a file of more than 2kB, it sometimes goes into *Pelion DM isn't responding* state.
+- When using custom service UUID and service characteristics UUID, the application sometimes goes into *Pelion DM keeps stopping* state.
 
 ### Out of scope
 - Custom task types other than *configure* and *read-data*.
