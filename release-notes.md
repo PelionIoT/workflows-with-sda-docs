@@ -3,13 +3,13 @@
 ## Workflows with Secure Device Access v1.0.0
 
 ### Supported environment and versions
-- IoT device: [ST DISCO-L475VG-IOT01A](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/)
-- Device Management Client version: 4.2.1
-- Mbed OS version: 5.15
-- Mobile platform: Android
-- Android OS version: Android Lollipop, 5.0 and higher
-- Pelion Device Management (PDM) mobile app version: 1.0.2
-- workflows-with-sda-client firmware version: 1.0.1
+- IoT device: [ST DISCO-L475VG-IOT01A](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/).
+- Device Management Client version: 4.2.1.
+- Mbed OS version: 5.15.
+- Mobile platform: Android.
+- Android OS version: Android Lollipop, 5.0 and higher.
+- Pelion Device Management (PDM) mobile app version: 1.0.2.
+- workflows-with-sda-client firmware version: 1.0.1.
 
 ### Added
 - Integrated Workflow Management Service (WMS) with Secure Device Access (SDA).
@@ -30,8 +30,8 @@
 - Two-factor authentication (2FA) not supported.
 - If you enter an incorrect password more than five times, you have to reset the password using Device Management Portal.
 - More than 50 devices in one workflow not supported.
-- When the application tries to read or write a file of more than 2kB, it sometimes goes into *Pelion DM isn't responding* state.
-- When using custom service UUID and service characteristics UUID, the application sometimes goes into *Pelion DM keeps stopping* state.
+- When the application tries to read or write a file of more than 2kB, it sometimes goes into the **Pelion DM isn't responding** state.
+- When using the custom service UUID and service characteristics UUID, the application sometimes goes into the **Pelion DM keeps stopping** state.
 
 ### Out of scope
 - Custom task types other than *configure* and *read-data*.
