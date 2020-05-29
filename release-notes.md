@@ -32,6 +32,13 @@
 - More than 50 devices in one workflow not supported.
 - When the application tries to read or write a file of more than 2kB, it sometimes goes into *Pelion DM isn't responding* state.
 
+### Known issues - Pelion Portal
+- In *New job* page, if you enter data in description field and then delete it, it converts to a mandatory field.
+- In *New job* page, user gets assigned to the job but the user's name is not visible in *Assign to* field.
+- In *Job details* page, error logs are not available for the failed read tasks.
+- In *Job details* page, even though the job is assigned to the user it shows Unassigned.
+- Inconsistent behavior when deleting jobs in *Jobs* page.
+
 ### Out of scope
 - Custom task types other than *configure* and *read-data*.
 - Custom branding in mobile app is limited to landscape logo image.
