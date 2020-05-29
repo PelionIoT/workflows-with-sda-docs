@@ -247,11 +247,12 @@ For this demo, you need:
 
 1. A job cannot be rerun after the mobile application marks it as **Completed** and uploads the run logs to Device Management.
 
-## BLE scan setup using PDM mobile application
+## BLE scan setup using the Pelion Device Management mobile application
 
-User can configure the device scan policy to look for device using a custom service UUID and service characteristic UUID. By default the values are -
-- Service UUID - 6e400001-b5a3-f393-e0a9-e50e24dcca9e, where 0x0001 is the 16bit short UUID
-- Service Characteristics UUID - 6e400002-b5a3-f393-e0a9-e50e24dcca9e, where 0x0002 is the 16bit short UUID
+You can configure the device scan policy to look for a device using a custom service UUID and service characteristic UUID. By default, the values are:
+
+- Service UUID - 6e400001-b5a3-f393-e0a9-e50e24dcca9e, where 0x0001 is the 16bit short UUID.
+- Service Characteristics UUID - 6e400002-b5a3-f393-e0a9-e50e24dcca9e, where 0x0002 is the 16bit short UUID.
 
     <img src="assets/settings.png" width="270" height="550"/>
     <img src="assets/scan_setup.png" width="270" height="550"/>
