@@ -98,7 +98,6 @@ mbed config -G GCC_ARM_PATH "~/<gcc-arm-none-eabi-6-xxx>/bin"
     #define MANUFACTURER_NAME           "ARM"
     #define MODEL_NUM                   "0.1.1"
     #define HARDWARE_REVISION           "0.1.1"
-    #define FIRMWARE_REVISION           "0.1.1"
     #define SOFTWARE_REVISION           "0.1.1"
     #define MOUNT_POINT                 "fs"
 
