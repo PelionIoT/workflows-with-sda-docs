@@ -43,11 +43,11 @@ For this demo, you need:
 
     **Note:** You must have **Secure device access** and **Workflow management** features activated in the account needs to have. You can [open a request](https://portal.mbedcloud.com/contact) to have these features enabled. You also need **Administrator** privileges in the account to create access policies and jobs.
 
-- An [ST DISCO-L475VG-IOT01A](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/) device on which you [install the workflows-with-secure-device-access-client application](https://github.com/armPelionEdge/alphatronics-docs/blob/master/workflows-with-secure-device-access-client.md).
+- An [ST DISCO-L475VG-IOT01A](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/) device on which you [install the workflows-with-secure-device-access-client application](https://github.com/armPelionEdge/workflows-with-sda-docs/blob/master/workflows-with-secure-device-access-client.md).
 
     An IoT device on which you will securely execute the workflows.
 
-- An Android device on which you install the PDM mobile application.
+- An Android device on which you install the [PDM mobile application](https://github.com/armPelionEdge/peliondevicemanagement-android/releases/latest).
 
     The PDM mobile application moderates between Device Management and remote IoT device. You use the application to synchronize workflows when connected to Device Management and to execute jobs over BLE in the vicinity of IoT devices.
 
@@ -246,3 +246,13 @@ For this demo, you need:
 1. The PDM mobile application marks jobs that are expected to fail as **Completed**, and the Portal provides logs indicating any errors that occurred during the execution. For example, if a job has to read a file that does not exist on the IoT device, the job will run as expected and the mobile application will mark the job **Completed** on the **Job Run** page. After the mobile application uploads the run logs to Device Management Portal, you can view the logs, which will indicate that the file does not exist.
 
 1. A job cannot be rerun after the mobile application marks it as **Completed** and uploads the run logs to Device Management.
+
+## BLE scan setup using the Pelion Device Management mobile application
+
+You can configure the device scan policy to look for a device using a custom service UUID and service characteristic UUID. By default, the values are:
+
+- Service UUID - 6e400001-b5a3-f393-e0a9-e50e24dcca9e, where 0x0001 is the 16bit short UUID.
+- Service Characteristics UUID - 6e400002-b5a3-f393-e0a9-e50e24dcca9e, where 0x0002 is the 16bit short UUID.
+
+    <img src="assets/settings.png" width="270" height="550"/>
+    <img src="assets/scan_setup.png" width="270" height="550"/>
