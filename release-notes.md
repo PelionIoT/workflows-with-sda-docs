@@ -8,13 +8,13 @@
 - Mbed OS version: 5.15.
 - Mobile platform: Android.
 - Android OS version: Android Lollipop, 5.0 and higher.
-- Pelion Device Management (PDM) mobile app version: 1.0.2.
+- Pelion Device Management (PDM) mobile app for Android version: 1.0.2.
 - workflows-with-sda-client firmware version: 1.0.1.
 
 ### Added
 - Integrated Workflow Management Service (WMS) with Secure Device Access (SDA).
-- Designed new UI/UX and implemented PDM mobile app in Kotlin.
-- Integrated WMS APIs in PDM mobile app.
+- Designed new UI/UX and implemented PDM mobile app for Android in Kotlin.
+- Integrated WMS APIs in PDM mobile app for Android.
 - Ability to operate the mobile app in offline mode.
 - Ability to read and write files from remote IoT device.
 - BLE interface between mobile app and IoT device.
@@ -24,7 +24,7 @@
 - Support for `configure` and `read-data` workflow task types.
 
 
-### Known issues - PDM mobile app
+### Known issues - PDM mobile app for Android
 - Identity providers other than *Native* not supported.
 - *Forgot password* not supported.
 - Two-factor authentication (2FA) not supported.
@@ -44,5 +44,5 @@
 - Custom task types other than *configure* and *read-data*.
 - Custom branding in mobile app is limited to landscape logo image.
 - PDM mobile app for iOS platform.
-- Encrypted link between PDM mobile app and IoT device.
+- Encrypted link between PDM mobile app for Android and IoT device.
 - Firmware update of remote device.

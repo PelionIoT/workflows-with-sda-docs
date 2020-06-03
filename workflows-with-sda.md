@@ -8,7 +8,7 @@ This document explains how to use Pelion services to manage workflows that requi
 
 ## Introduction
 
-Pelion Device Management lets you manage workflows and execute them securely on remote IoT devices.
+Pelion Device Management for Android lets you manage workflows and execute them securely on remote IoT devices.
 
 A workflow might require a technician to configure devices that are offline or outside the network coverage area. The offline setting presents a challenge in validating the identity of the device and the user without accessing the central Identity & Access Management (IAM) system.
 
@@ -47,9 +47,9 @@ For this demo, you need:
 
     An IoT device on which you will securely execute the workflows.
 
-- An Android device on which you install the [PDM mobile application](https://github.com/armPelionEdge/peliondevicemanagement-android/releases/latest).
+- An Android device on which you install the [PDM mobile application for Android](https://github.com/armPelionEdge/peliondevicemanagement-android/releases/latest).
 
-    The PDM mobile application moderates between Device Management and remote IoT device. You use the application to synchronize workflows when connected to Device Management and to execute jobs over BLE in the vicinity of IoT devices.
+    The PDM mobile application for Android moderates between Device Management and remote IoT device. You use the application to synchronize workflows when connected to Device Management and to execute jobs over BLE in the vicinity of IoT devices.
 
 ### Step-by-step guide
 
@@ -136,7 +136,7 @@ For this demo, you need:
 
         After a technician downloads a job, you can no longer edit the job, but you can delete it. When you delete a job that a technician has downloaded, the deleted job remains visible in the system.
 
-1. Log in to the PDM mobile application using the personal Device Management credentials of the technician to whom you assigned jobs.
+1. Log in to the PDM mobile application for Android using the personal Device Management credentials of the technician to whom you assigned jobs.
 
     **Note:** You need internet access for this step.
 
@@ -148,13 +148,13 @@ For this demo, you need:
 
     <img src="assets/accounts.png" width="270" height="550"/>
 
-    **Note:** Accounts in the PDM mobile application are the equivalent of teams in Device Management Portal.
+    **Note:** Accounts in the PDM mobile application for Android are the equivalent of teams in Device Management Portal.
 
     To switch accounts, tap **Switch Account** on the navigation bar to navigate back to the **Accounts** page.
 
     <img src="assets/navigation_drawer.png" width="270" height="550"/>
 
-1. Download assigned jobs using the PDM mobile application.
+1. Download assigned jobs using the PDM mobile application for Android.
 
     When you open the **Pending Jobs** page, the application automatically starts downloading new jobs and synchronizes jobs for offline execution.
 
@@ -176,7 +176,7 @@ For this demo, you need:
 
        **Note:** You need internet access to request a new SDA token.
 
-1. Execute the job on your nearby IoT devices using the PDM mobile application:
+1. Execute the job on your nearby IoT devices using the PDM mobile application for Android:
 
     1. Tap a job cell to open the **Job details** page.
 
@@ -220,7 +220,7 @@ For this demo, you need:
         <img src="assets/job_upload.png" width="270" height="550"/>
         <img src="assets/job_uploading.png" width="270" height="550"/>
 
-        **Note:** Once the run logs of a job are uploaded to Device Management, the job will be removed from the PDM mobile application on the next login.
+        **Note:** Once the run logs of a job are uploaded to Device Management, the job will be removed from the PDM mobile application for Android on the next login.
 
 1. Inspect the job results in Device Management Portal:
 
@@ -243,11 +243,11 @@ For this demo, you need:
 
 ## Expected behavior
 
-1. The PDM mobile application marks jobs that are expected to fail as **Completed**, and the Portal provides logs indicating any errors that occurred during the execution. For example, if a job has to read a file that does not exist on the IoT device, the job will run as expected and the mobile application will mark the job **Completed** on the **Job Run** page. After the mobile application uploads the run logs to Device Management Portal, you can view the logs, which will indicate that the file does not exist.
+1. The PDM mobile application for Android marks jobs that are expected to fail as **Completed**, and the Portal provides logs indicating any errors that occurred during the execution. For example, if a job has to read a file that does not exist on the IoT device, the job will run as expected and the mobile application will mark the job **Completed** on the **Job Run** page. After the mobile application uploads the run logs to Device Management Portal, you can view the logs, which will indicate that the file does not exist.
 
 1. A job cannot be rerun after the mobile application marks it as **Completed** and uploads the run logs to Device Management.
 
-## BLE scan setup using the Pelion Device Management mobile application
+## BLE scan setup using the Pelion Device Management mobile application for Android
 
 You can configure the device scan policy to look for a device using a custom service UUID and service characteristic UUID. By default, the values are:
 
