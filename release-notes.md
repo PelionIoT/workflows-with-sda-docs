@@ -30,15 +30,11 @@
 - Two-factor authentication (2FA) not supported.
 - If you enter an incorrect password more than five times, you have to reset the password using Device Management Portal.
 - More than 50 devices in one workflow not supported.
-- When the application tries to read or write a file of more than 2kB, it sometimes goes into the **Pelion DM isn't responding** state.
 - When using the custom service UUID and service characteristics UUID, the application sometimes goes into the **Pelion DM keeps stopping** state.
 
 ### Known issues - Pelion Portal
 - In the **New job** page, if you enter data in the description field and then delete it, it converts to a mandatory field.
-- In the **New job** page, when the user is assigned to the job, the user's name is not visible in the **Assign to** field.
 - In the **Job details** page, error logs are not available for the failed read tasks.
-- In the **Job details** page, even though the job is assigned to the user, it shows **Unassigned**.
-- Inconsistent behavior when deleting jobs in the **Jobs** page.
 
 ### Out of scope
 - Custom task types other than *configure* and *read-data*.
