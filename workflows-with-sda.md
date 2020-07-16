@@ -75,7 +75,7 @@ For this demo, you need:
             - *configure*: To write file to the device.
         1. Under **Identify devices** by, select **Endpoint name** and enter your device's endpoint name in the textbox below.
 
-            If you use developer credentials, you can find the device endpoint name in the *mbed_cloud_dev_credentials.c* file you downloaded when you set up the [workflows-with-secure-device-access-client application](https://github.com/armPelionEdge/workflows-with-secure-device-access-client/blob/master/README.md).
+            If you use developer credentials, you can find the device endpoint name in the *mbed_cloud_dev_credentials.c* file you downloaded when you set up the [workflows-with-secure-device-access-client application](https://github.com/armPelionEdge/workflows-with-sda-docs/blob/master/workflows-with-secure-device-access-client.md#building-the-application).
 
             In production, use the device endpoint name given to the device during the factory provisioning process. For more information about the factory provisioning process, please see the [Pelion Device Management Factory Provisioning documentation site](https://www.pelion.com/docs/device-management-provision/latest/introduction/index.html).
 
