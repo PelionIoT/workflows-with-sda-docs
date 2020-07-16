@@ -8,7 +8,7 @@
 - Mbed OS version: 5.15.
 - Mobile platform: Android.
 - Android OS version: Android Lollipop, 5.0 and higher.
-- Pelion Device Management (PDM) mobile app for Android version: 1.0.2.
+- Pelion Device Management (PDM) mobile app for Android version: 1.1.0.
 - workflows-with-sda-client firmware version: 1.0.1.
 
 ### Added
@@ -27,8 +27,6 @@
 ### Known issues - PDM mobile app for Android
 - Identity providers other than *Native* not supported.
 - *Forgot password* not supported.
-- Two-factor authentication (2FA) not supported.
-- If you enter an incorrect password more than five times, you have to reset the password using Device Management Portal.
 - More than 50 devices in one workflow not supported.
 - When using the custom service UUID and service characteristics UUID, the application sometimes goes into the **Pelion DM keeps stopping** state.
 
