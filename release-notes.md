@@ -2,7 +2,7 @@
 
 ## Workflows with Secure Device Access v1.1.0
 
-### What's New:
+### What's new:
 - Added two-factor authentication (2FA) feature to the Android app.
 - Added a Captcha challenge when you enter a wrong password more than five times in the Android app.
 - Handled scenario in which the Android app went into **Pelion DM isn't responding** state for write tasks of more than 2kB.
@@ -35,7 +35,7 @@
 - Support for `configure` and `read-data` workflow task types.
 
 
-### Known issues - PDM mobile app for Android
+### Known issues - Pelion Device Management mobile app for Android
 - Identity providers other than *Native* not supported.
 - *Forgot password* not supported.
 - Two-factor authentication (2FA) not supported.
